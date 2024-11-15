@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:lefrancois_thibaut_y2_flutter/views/pages/student_page.dart';
 
 import 'home_page.dart';
 
@@ -20,6 +21,7 @@ class MyApp extends StatelessWidget {
       ),
       routes: {
         '/': (context) => const HomePage(),
+        '/student': (context) => const StudentsPage()
       },
     );
   }

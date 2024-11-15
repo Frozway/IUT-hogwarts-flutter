@@ -5,9 +5,6 @@ import 'package:lefrancois_thibaut_y2_flutter/views/molecules/list_view_item.dar
 
 class Menu extends StatelessWidget {
   const Menu({super.key});
-  static var listItems = [
-
-  ];
 
   @override
   Widget build(BuildContext context) {
@@ -19,7 +16,17 @@ class Menu extends StatelessWidget {
           onTap: () {
             Navigator.pushNamed(context, "/");
           }
-        )
+        ),
+        ListItem(
+            icon: const Icon(Icons.school),
+            title: "Gryffindor Students",
+            onTap: () {
+              Navigator.pushNamed(
+                context,
+                "/student"
+              );
+            }
+        ),
       ],
         header: const DrawerHeader(
           decoration: BoxDecoration(

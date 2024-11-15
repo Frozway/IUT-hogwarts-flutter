@@ -13,13 +13,6 @@ class Menu extends StatelessWidget {
     return Drawer(
       child: ListViewItem(items: [
         ListItem(
-            icon: const Icon(Icons.home),
-            title: "Home",
-            onTap: () {
-              Navigator.pushNamed(context, "/");
-            }
-        ),
-        ListItem(
             icon: const Icon(Icons.school),
             title: "Gryffindor Students",
             onTap: () {
@@ -29,7 +22,6 @@ class Menu extends StatelessWidget {
               );
             }
         ),
-        // completed games
         ListItem(
             icon: const Icon(Icons.sports_soccer),
             title: "Completed Games",
@@ -39,8 +31,16 @@ class Menu extends StatelessWidget {
                   "/game/completed"
               );
             }
+        ),ListItem(
+            icon: const Icon(Icons.sports_bar),
+            title: "Upcoming Games",
+            onTap: () {
+              Navigator.pushNamed(
+                  context,
+                  "/game/upcoming"
+              );
+            }
         ),
-        // logout button
         ListItem(
             icon: const Icon(Icons.logout),
             title: "Logout",
@@ -48,7 +48,7 @@ class Menu extends StatelessWidget {
               context.read<AuthCubit>().logout();
               Navigator.pushReplacementNamed(context, "/");
             }
-        ),
+        )
       ],
           header: const DrawerHeader(
               decoration: BoxDecoration(

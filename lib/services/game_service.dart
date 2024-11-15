@@ -16,4 +16,16 @@ class GameService {
       throw Exception('Failed to load games');
     }
   }
+
+  Future<List<Game>> fetchUpcomingGames() async {
+    final response = await http.get(Uri.parse(_baseUrl));
+
+    if (response.statusCode == 200) {
+      List<dynamic> jsonList = json.decode(response.body);
+      List<Game> games = jsonList.map((json) => Game.fromJson(json)).toList();
+      return games.where((game) => game.homeScore == null && game.awayScore == null).toList();
+    } else {
+      throw Exception('Failed to load games');
+    }
+  }
 }

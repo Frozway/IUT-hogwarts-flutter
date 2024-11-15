@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:lefrancois_thibaut_y2_flutter/views/pages/game/completed_game_page.dart';
+import 'package:lefrancois_thibaut_y2_flutter/views/pages/game/upcoming_game_page.dart';
 import 'package:lefrancois_thibaut_y2_flutter/views/pages/student_page.dart';
 
 import '../../cubit/auth/auth_cubit.dart';
@@ -28,6 +29,7 @@ class MyApp extends StatelessWidget {
           '/': (context) => const LoginPage(),
           '/student': (context) => const StudentsPage(),
           '/game/completed': (context) => const CompletedGamePage(),
+          '/game/upcoming': (context) => const UpcomingGamePage(),
         },
       ),
     );

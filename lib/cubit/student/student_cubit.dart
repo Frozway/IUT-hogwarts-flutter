@@ -1,5 +1,5 @@
 import 'package:bloc/bloc.dart';
-import 'package:lefrancois_thibaut_y2_flutter/models/student.dart';
+import 'package:lefrancois_thibaut_y2_flutter/models/student/student.dart';
 import 'package:lefrancois_thibaut_y2_flutter/services/student_service.dart';
 
 part 'student_state.dart';

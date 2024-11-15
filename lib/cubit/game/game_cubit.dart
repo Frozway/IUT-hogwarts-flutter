@@ -1,7 +1,7 @@
 import 'package:bloc/bloc.dart';
 import 'package:meta/meta.dart';
 
-import '../../models/game.dart';
+import '../../models/game/game.dart';
 import '../../services/game_service.dart';
 
 part 'game_state.dart';

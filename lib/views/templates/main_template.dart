@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:lefrancois_thibaut_y2_flutter/views/organisms/menu.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import '../../cubit/auth/auth_cubit.dart';
+import '../../models/user/user.dart';
+import '../organisms/menu.dart';
 
 class MainTemplate extends StatelessWidget {
   const MainTemplate({super.key, required this.title, required this.body});
@@ -11,7 +14,11 @@ class MainTemplate extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: const Color(0xFF4090FF),
-        title: Text(title),
+        title: BlocBuilder<AuthCubit, User?>(
+          builder: (context, user) {
+            return Text(user != null ? '${user.username} ${user.house}' : title);
+          },
+        ),
       ),
       drawer: const Menu(),
       body: Center(

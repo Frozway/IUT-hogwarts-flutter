@@ -1,6 +1,6 @@
 import 'dart:convert';
 import 'package:http/http.dart' as http;
-import 'package:lefrancois_thibaut_y2_flutter/models/game.dart';
+import 'package:lefrancois_thibaut_y2_flutter/models/game/game.dart';
 
 class GameService {
   static const String _baseUrl = 'https://hogwarts-api-univ-lr.azurewebsites.net/quidditch/j-doe/matches/';

@@ -1,6 +1,6 @@
 import 'dart:convert';
 import 'package:http/http.dart' as http;
-import 'package:lefrancois_thibaut_y2_flutter/models/student.dart';
+import 'package:lefrancois_thibaut_y2_flutter/models/student/student.dart';
 
 class StudentService {
   static const String _baseUrl = 'https://hogwarts-api-univ-lr.azurewebsites.net/hogwarts/students/';

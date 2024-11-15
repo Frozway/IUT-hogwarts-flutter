@@ -27,6 +27,17 @@ class Menu extends StatelessWidget {
               );
             }
         ),
+        // completed games
+        ListItem(
+            icon: const Icon(Icons.sports_soccer),
+            title: "Completed Games",
+            onTap: () {
+              Navigator.pushNamed(
+                context,
+                "/game/completed"
+              );
+            }
+        ),
       ],
         header: const DrawerHeader(
           decoration: BoxDecoration(

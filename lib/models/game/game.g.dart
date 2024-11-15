@@ -7,7 +7,7 @@ part of 'game.dart';
 // **************************************************************************
 
 Game _$GameFromJson(Map<String, dynamic> json) => Game(
-      id: json['id'] as String,
+      id: json['id'] as String?,
       tournament: json['tournament'] as String,
       date: json['date'] as String,
       homeTeam: json['homeTeam'] as String,

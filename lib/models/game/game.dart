@@ -4,7 +4,7 @@ part 'game.g.dart';
 
 @JsonSerializable()
 class Game {
-  final String id;
+  final String? id;
   final String tournament;
   final String date;
   final String homeTeam;
@@ -13,7 +13,7 @@ class Game {
   final int? awayScore;
 
   Game({
-    required this.id,
+    this.id,
     required this.tournament,
     required this.date,
     required this.homeTeam,

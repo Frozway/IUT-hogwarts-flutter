@@ -29,4 +29,22 @@ class GameCubit extends Cubit<GameState> {
       emit(GameError('Failed to load games'));
     }
   }
+
+  Future<void> deleteGame(String tournament, String id) async {
+    try {
+      await gameService.deleteGame(tournament, id);
+      fetchUpcomingGames(); // Refresh the list after deletion
+    } catch (e) {
+      emit(GameError('Failed to delete game : $e'));
+    }
+  }
+
+  Future<void> addGame(Game game) async {
+    try {
+      await gameService.addGame(game);
+      fetchUpcomingGames(); // Refresh the list after addition
+    } catch (e) {
+      emit(GameError('Failed to add game : $e'));
+    }
+  }
 }

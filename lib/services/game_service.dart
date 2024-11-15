@@ -28,4 +28,26 @@ class GameService {
       throw Exception('Failed to load games');
     }
   }
+
+  Future<void> deleteGame(String tournament, String id) async {
+    final response = await http.delete(Uri.parse('$_baseUrl/$tournament/matches/$id'));
+
+    // if (response.statusCode != 200) {
+    //   throw Exception('Failed to delete game');
+    // }
+  }
+
+  Future<void> addGame(Game game) async {
+    final response = await http.post(
+      Uri.parse(_baseUrl),
+      headers: <String, String>{
+        'Content-Type': 'application/json; charset=UTF-8',
+      },
+      body: jsonEncode(game.toJson()),
+    );
+
+    // if (response.statusCode != 201) {
+    //   throw Exception('Failed to add game');
+    // }
+  }
 }
